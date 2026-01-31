@@ -26,3 +26,16 @@ class Solution(object):
                 return l   
         
         return -1  
+#The aboce code will have higher complexity and incomplete algorith . So i tried a precise way of finding Pivot element.
+class Solution(object):
+    def pivotIndex(self, nums):
+        total_sum  = sum(nums)
+        l = 0
+
+        for i,num in enumerate(nums):
+            r = total_sum - l - num 
+            if l == r:
+                return i 
+            l = l + num
+
+        return -1
